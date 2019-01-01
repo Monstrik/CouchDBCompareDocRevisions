@@ -1,2 +1,2 @@
 # CouchDBCompareDocRevisions
-CouchDB Compare Document Revisions
+Compare Document Revisions form CouchDB
