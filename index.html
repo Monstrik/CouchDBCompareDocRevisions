@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CouchDB Doc History</title>
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/throbber.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/jdd.css" type="text/css" media="screen">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"
+            charset="utf-8"></script>
+
+    <script src="js/jsl/jsl.format.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jsl/jsl.parser.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jdd.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/cdd.js" type="text/javascript" charset="utf-8"></script>
+
+
+</head>
+<body>
+
+<div id="main">
+    <div class="header">
+        <strong>CouchDB Doc History</strong> &nbsp;&nbsp;&nbsp;
+        Basic Auth
+        <input id="couchUser" type="text" placeholder="CouchUser"/>
+        <input id="couchPass" type="password" placeholder="CouchPasswordUser"/>
+    </div>
+    <div class="couchContainer">
+
+
+        <input id="getDocButton" type="button" value="Find"/>
+        <input id="couchUrl" type="text" size="100"
+               value="http://192.168.1.154:5984/pcr-archive/0fde12cd-0d8f-11e9-9673-56ce7f333890"
+               placeholder="Enter Url"/>
+        <br>
+        rev:
+        <span id="prevRev"></span>
+        <input id="showPrev" type="button" value="<<"/>
+        <input id="curRev" type="number" size="2"/>
+        <input id="showNext" type="button" value=">>"/>
+        <span id="nextRev"></span>
+        <button id="compare">Compare</button>
+
+    </div>
+
+
+    <div class="initContainer">
+
+        <div class="left">
+            <textarea spellcheck="false" id="textarealeft"
+                      placeholder="Enter JSON to compare, enter an URL to JSON"></textarea>
+            <pre id="errorLeft" class="error"></pre>
+            <!--<span class="fileInput">or <input type="file" id="fileLeft" onchange="CouchDBDocHistoryChanges.handleFiles(this.files, 'left')"></span>-->
+        </div>
+
+        <!--<div class="center">-->
+
+        <!--<div class="throbber-loader"></div>-->
+        <!--<br/><br/><br/><br/>            or try some <a href="#" id="sample">sample data</a>-->
+
+        <!--</div>-->
+
+        <div class="right">
+            <textarea spellcheck="false" class="right" id="textarearight"
+                      placeholder="Enter JSON to compare, enter an URL to JSON"></textarea>
+            <pre id="errorRight" class="error"></pre>
+            <!--<span class="fileInput">or <input type="file" id="fileRight"-->
+            <!--onchange="CouchDBDocHistoryChanges.handleFiles(this.files, 'right')"></span>-->
+        </div>
+    </div>
+
+    <span class="diffcontainer">
+        <div id="report"></div>
+        <pre id="out" class="left" class="codeBlock"></pre>
+        <pre id="out2" class="right" class="codeBlock"></pre>
+        <ul id="toolbar" class="toolbar"></ul>
+    </span>
+
+
+</div>
+
+</body>
+</html>
